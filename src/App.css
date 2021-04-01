@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.primeCandidate {
+  display: inline-block;
+  margin: 2px;
+  padding: 0 3px 0 3px;
+  color: white;
+  background: #628cff;
+  border-radius: 0.2em;
+  min-width: 1.75em;
+  min-height: 1.5em;
+}
+
+.primeCandidateFiltered {
+  background: #ff628c;
+  text-decoration: line-through;
+}
+
+/*.primeCandidateRejected {*/
+/*  background: #9fa8c1;*/
+/*  text-decoration: line-through;*/
+/*}*/
+
+.sieveStep {
+  margin: 0 0 20px 0
+}
+
+.sieveStep {
+  margin: 0 0 20px 0
+}
+
+.sieveSteps {
+  margin: 20px 50px 0 50px;
+}
