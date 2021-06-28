@@ -4,11 +4,11 @@ import Sieve from "./components/Sieve";
 
 
 function App() {
-  return (
-    <div className="App">
-      <Sieve></Sieve>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Sieve></Sieve>
+        </div>
+    );
 }
 
 export default App;
