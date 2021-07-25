@@ -1,14 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Sieve from "./components/Sieve";
-
+// import Sieve from './components/sieve/Sieve';
+import Drop from './components/Drop';
 
 function App() {
-    return (
-        <div className="App">
-            <Sieve></Sieve>
-         </div>
-    );
+  return (
+    // eslint-disable-next-line react/jsx-filename-extension
+    <div className="App">
+      <Drop />
+      {/* <Sieve /> */}
+    </div>
+  );
 }
 
 export default App;

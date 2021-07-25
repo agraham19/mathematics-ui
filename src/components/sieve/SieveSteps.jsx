@@ -8,6 +8,7 @@ const SieveSteps = ({ steps, upperLimit }) => (
   <div className="sieveSteps">
     {steps.slice(1).map((values, index) => (
       <>
+        {/* eslint-disable-next-line react/no-array-index-key */}
         <SieveStep values={values} upperLimit={upperLimit} key={index} />
       </>
     ))}

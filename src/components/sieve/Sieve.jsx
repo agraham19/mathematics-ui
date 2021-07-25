@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import SieveSteps from './SieveSteps';
 
 const Sieve = () => {
   const [steps, setSteps] = useState([]);
   const [upperLimit, setValue] = useState(20);
 
-  const handleSubmit = (upperLimit) => (e) => {
+  const handleSubmit = (newUpperLimit) => (e) => { // fix
     e.preventDefault();
-    setValue(upperLimit);
+    setValue(newUpperLimit);
 
-    console.log(`Submitting sieve request for: ${upperLimit}`);
+    console.log(`Submitting sieve request for: ${newUpperLimit}`);
 
-    axios.get(`http://localhost:8082/find_primes_up_to/${upperLimit}`).then((response) => {
+    axios.get(`http://localhost:8082/find_primes_up_to/${newUpperLimit}`).then((response) => {
       setSteps(response.data.steps);
     });
   };
@@ -38,9 +39,14 @@ const SieveInput = ({ handleSubmit }) => {
   return (
     <>
       <input value={upperLimit} onChange={onChange} />
-      <button onClick={handleSubmit(upperLimit)}>Sieve!</button>
+      <button onClick={handleSubmit(upperLimit)} type="button">Sieve!</button>
     </>
   );
+};
+
+SieveInput.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types,react/require-default-props
+  handleSubmit: PropTypes.func,
 };
 
 export default Sieve;
